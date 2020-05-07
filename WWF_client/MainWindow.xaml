@@ -1,0 +1,55 @@
+﻿<Window x:Class="WWF_client.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="WWF_Adm" Height="640.628" Width="614.337" Background="LightGray" ResizeMode="NoResize">
+ 
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="455*"></ColumnDefinition>
+            <ColumnDefinition Width="153*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="29*"></RowDefinition>
+            <RowDefinition Height="583*"></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <Border Grid.Column="0" Grid.Row="1" BorderBrush="Black" BorderThickness="1" Margin="6,10,18,10">
+            <TextBox x:Name="RequestTextbox" TextWrapping="Wrap" TextAlignment="Left"  Text=""  TextChanged="RequestTextbox_OnTextChanged" HorizontalAlignment="Left" Width="429,5" />
+        </Border>
+
+        <StackPanel Grid.Column ="1" Grid.Row="1">
+            <WrapPanel Orientation="Vertical" HorizontalAlignment="Left" Height="269" VerticalAlignment="Top" Margin="0,20,0,0" Width="133">
+                <Button x:Name="NewsButton"  Content="News" Margin="0,0,0,6" Width="132" Height="27" Click="TableButton_Click"/>
+                <Button x:Name="NewsDetailsButton" Content="News Details" Margin="0,0,0,6" Width="132" Height="27" Click="TableButton_Click"/>
+                <Button x:Name="ContinentsButton" Content="Continents" Margin="0,0,0,6" Width="132" Height="27" Click="TableButton_Click"/>
+                <Button x:Name="StatusButton" Content="Status" Margin="0,0,0,6" Width="132" Height="28" Click="TableButton_Click"/>
+                <Button x:Name="CategoriesButton" Content="Categories" Margin="0,0,0,6" Width="132" Height="27" Click="TableButton_Click"/>
+                <Button x:Name="AnimalsButton" Content="Animals" Margin="0,0,0,6" Width="132" Height="28" Click="TableButton_Click"/>
+                <Button x:Name="AnimalsOnContinentsButton" Content="AnimalsOnContinents" Margin="0,0,0,6" Width="132" Height="27" Click="TableButton_Click"/>
+            </WrapPanel>
+            <WrapPanel Orientation="Vertical" HorizontalAlignment="Left" Height="214" VerticalAlignment="Top" Width="133">
+                <Button x:Name="GetButton" Content="Update layout" Width="132" Height="27" Margin="0,0,0,6" Click="RequestButton_Click" />
+                <Button x:Name="PostButton" Content="Add" Width="132" Height="27" Margin="0,0,0,6" Click="RequestButton_Click"/>
+                <Button x:Name="PutButton" Content="Edit" Width="132" Height="27" Margin="0,0,0,6" Click="RequestButton_Click" />
+                <WrapPanel Orientation="Horizontal">
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Set ID:" Margin="0,0,0,6" Height="16" Width="37"/>
+                    <TextBox x:Name="DeteleIdTextbox" Height="18" TextWrapping="Wrap" Text="" VerticalAlignment="Top"  Width="68"/>
+                </WrapPanel>
+
+                <Button x:Name="GetIdButton" Content="Get by id" Width="132" Height="27" Margin="0,0,0,6" Click="RequestButton_Click"/>
+                <Button x:Name="DeleteButton" Content="Delete" Width="132" Height="27" Margin="0,0,0,6" Click="RequestButton_Click"/>
+
+            </WrapPanel>
+
+        </StackPanel>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Connection string:" VerticalAlignment="Top" Height="16" Width="97" Margin="6,10,0,0"/>
+        <TextBlock x:Name="UrlTextBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="155,0,0,0" Height="16" Width="0" />
+
+    </Grid>
+</Window>
+
